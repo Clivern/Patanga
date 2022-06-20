@@ -8,15 +8,15 @@ defmodule Patanga do
   """
 
   @doc """
-  Hello world.
+  Get The Version
 
   ## Examples
 
-      iex> Patanga.hello()
-      :world
+      iex> Patanga.version()
+      "0.1.0"
 
   """
-  def hello do
-    :world
+  def version do
+    "0.1.0"
   end
 end

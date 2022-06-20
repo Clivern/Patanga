@@ -52,6 +52,13 @@ i:
 	$(iex) -S mix
 
 
+## run: Run application
+.PHONY: run
+run:
+	@echo ">> ============= Run Application ============= <<"
+	$(mix) run --no-halt
+
+
 ## ci: Build docs
 .PHONY: ci
 ci: test

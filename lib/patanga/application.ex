@@ -15,7 +15,7 @@ defmodule Patanga.Application do
     children = [
       # Starts a worker by calling: Patanga.Worker.start_link(arg)
       # {Patanga.Worker, arg}
-      {Plug.Cowboy, scheme: :http, plug: Patanga.HelloWorld, options: [port: 8080]}
+      {Plug.Cowboy, scheme: :http, plug: Patanga.Router, options: [port: 8080]}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

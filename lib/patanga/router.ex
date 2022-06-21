@@ -8,20 +8,25 @@ defmodule Patanga.Router do
   require Logger
 
   plug(:match)
+  plug(Plug.Parsers, parsers: [:urlencoded, :multipart])
   plug(:dispatch)
 
+  def log_request(conn, _opts) do
+    Logger.info("Processing #{conn.method} #{conn.request_path}")
+    conn
+  end
+
+  plug(:log_request)
+
   get "/" do
-    Logger.info("Incoming request to /")
     Patanga.Home.call(conn, conn.body_params)
   end
 
   get "/_ready" do
-    Logger.info("Incoming request to /_ready")
     Patanga.Ready.call(conn, conn.body_params)
   end
 
   get "/_health" do
-    Logger.info("Incoming request to /_health")
     Patanga.Health.call(conn, conn.body_params)
   end
 

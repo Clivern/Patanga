@@ -11,7 +11,7 @@ services:
       MIX_ENV: dev
       DATABASE_URL: ecto://postgres:postgres@db/myapp_dev
   db:
-    image: postgres:15-alpine
+    image: postgres:16-alpine
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres

@@ -13,8 +13,8 @@ defmodule Patanga.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      # Starts a worker by calling: Patanga.Worker.start_link(arg)
-      # {Patanga.Worker, arg}
+      # Background Worker
+      {Patanga.Worker, %{key: "value"}},
       {Plug.Cowboy, scheme: :http, plug: Patanga.Router, options: [port: 8080]}
     ]
 

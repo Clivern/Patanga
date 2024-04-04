@@ -1,5 +1,5 @@
 # Use the official Elixir image as the base image
-FROM elixir:1.14.3-alpine
+FROM elixir:1.16.2-alpine
 
 # Install any necessary dependencies
 RUN apk add --update make

@@ -18,7 +18,7 @@ jobs:
           '1.16.0'
         ]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: erlef/setup-beam@v1
         with:
           otp-version: ${{matrix.otp}}
